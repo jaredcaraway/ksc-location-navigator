@@ -1,6 +1,7 @@
 const searchEl = document.getElementById("search");
 const listEl = document.getElementById("list");
 const countEl = document.getElementById("count");
+const titleEl = document.getElementById("title");
 const tabEls = document.querySelectorAll(".tab");
 
 let activeIndex = -1;
@@ -78,6 +79,7 @@ function switchTab(tab) {
     activeTab = tab;
     activeIndex = -1;
     searchEl.value = "";
+    titleEl.textContent = tab === "locations" ? "KSC Locations" : "KSC Specialties";
     searchEl.placeholder = `Search ${tab}...`;
     tabEls.forEach((el) => {
         el.classList.toggle("active", el.dataset.tab === tab);
